@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+    detector:
+        build: .
+        image: metro-obstacle-detector:latest
+        volumes:
+            - ./bags:/data:ro
+        command: ["/data", "--gate-rotate-deg", "90"]
